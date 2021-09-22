@@ -1,0 +1,5 @@
+.DS_Store
+
+/.idea
+/rabbitmq/vendor
+/rabbitmq/composer.lock

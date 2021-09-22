@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My WebSocket</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+</head>
+<body>
+Welcome<br/>
+<label for="text">
+    <input id="text" type="text" value="Hello, STOMP"/>
+</label>
+<div id="message">
+</div>
+<script>
+    /*
+      首先访问：http://localhost:15670/，验证 web stomp 差距是否激活
+       */
+    if (typeof WebSocket == 'undefined') {
+        console.log('不支持websocket')
+    }
+
+    // 初始化 ws 对象
+    var ws = new WebSocket('ws://localhost:15674/ws');
+    var client = Stomp.over(ws);
+
+    var on_connect = function() {
+        client.subscribe("/queue/queue", function(data) {
+            var msg = data.body;
+            console.log("收到数据:"+msg)
+        });
+        console.log('connected');
+    };
+    var on_error =  function() {
+        console.log('error');
+    };
+    // 连接RabbitMQ
+    //参数依次为：用户名，密码，连接后，出错，虚拟主机名
+    client.connect('guest', 'guest', on_connect, on_error, '/');
+    // console.log(">>>连接上http://localhost:15674");
+
+    document.getElementById("text").onblur=function (){
+        //向服务器发送"Hello, STOMP", 队列名为queue
+        client.send("/queue/queue", {}, document.getElementById("text").value);
+    }
+</script>
+</body>
+</html>
