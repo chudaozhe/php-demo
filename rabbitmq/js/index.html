@@ -25,10 +25,18 @@ Welcome<br/>
     var client = Stomp.over(ws);
 
     var on_connect = function() {
-        client.subscribe("/queue/queue", function(data) {
-            var msg = data.body;
-            console.log("收到数据:"+msg)
-        });
+        client.subscribe("order-99", function(message) {
+            let result = message.body;
+            console.log("收到数据:"+result)
+            let r=JSON.parse(result);
+            if (r.status===1){
+                console.log('已支付');
+                message.ack();//确认消息
+            }
+            // message.nack();//消息驳回，要求ack模式为{ack: 'client-individual'}
+            //https://www.cnblogs.com/piaolingzxh/p/5463918.html
+
+        }, {ack: 'client'});
         console.log('connected');
     };
     var on_error =  function() {
@@ -41,7 +49,7 @@ Welcome<br/>
 
     document.getElementById("text").onblur=function (){
         //向服务器发送"Hello, STOMP", 队列名为queue
-        client.send("/queue/queue", {}, document.getElementById("text").value);
+        client.send("hello", {}, document.getElementById("text").value);
     }
 </script>
 </body>
