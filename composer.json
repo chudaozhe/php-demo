@@ -1,6 +1,10 @@
 {
   "require": {
     "php-amqplib/php-amqplib": "^3.0",
-    "pda/pheanstalk": "^4.0"
+    "pda/pheanstalk": "^4.0",
+    "doctrine/orm": "^2.9",
+    "doctrine/cache": "^2.1",
+    "symfony/cache": "^5.3",
+    "mongodb/mongodb": "^1.11"
   }
 }
