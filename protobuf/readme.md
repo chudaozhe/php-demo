@@ -34,3 +34,6 @@ $person = new People\Person();
 $person->mergeFromString($bindata);
 echo $person->serializeToJsonString();
 ```
+
+## 文章
+http://www.cuiwei.net/p/1295314474
