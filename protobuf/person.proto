@@ -1,0 +1,14 @@
+syntax="proto3";
+package people;
+message Person {
+    string name=1; //姓名
+    int32  age=2; //年龄
+    int32 sex=3; //性别
+    Address address=4; //地址
+
+    message Address {
+        string city=1; //城市
+        string area=2; //区
+        int32 code=3; //邮编
+    }
+}

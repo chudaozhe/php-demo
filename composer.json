@@ -5,6 +5,7 @@
     "doctrine/orm": "^2.9",
     "doctrine/cache": "^2.1",
     "symfony/cache": "^5.3",
-    "mongodb/mongodb": "^1.11"
+    "mongodb/mongodb": "^1.11",
+    "google/protobuf": "^3.20"
   }
 }
