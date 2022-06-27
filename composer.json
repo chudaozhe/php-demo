@@ -7,6 +7,7 @@
     "doctrine/cache": "^2.1",
     "symfony/cache": "^5.3",
     "mongodb/mongodb": "^1.11",
-    "google/protobuf": "^3.20"
+    "google/protobuf": "^3.20",
+    "stomp-php/stomp-php": "^5.0"
   }
 }

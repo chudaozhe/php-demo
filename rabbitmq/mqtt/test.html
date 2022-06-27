@@ -11,10 +11,12 @@
                 clean: true,
                 connectTimeout: 4000,
                 clientId: 'client-h5',
-                username: "guest",
-                password: 'guest'
+                username: "cw",
+                password: '123456',
+
             }
-            const connectUrl = 'ws://localhost:15675/ws'
+            let connectUrl = 'ws://localhost:15675';
+            if (location.protocol==='https:') connectUrl='wss://www.cuiwei.net:15676/ws'
             const client = mqtt.connect(connectUrl, options);
 
             //当重新连接启动触发回调

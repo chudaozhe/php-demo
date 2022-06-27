@@ -44,7 +44,7 @@ Welcome<br/>
     };
     // 连接RabbitMQ
     //参数依次为：用户名，密码，连接后，出错，虚拟主机名
-    client.connect('guest', 'guest', on_connect, on_error, '/');
+    client.connect('guest', 'guest', on_connect, on_error, 'docker-rabbitmq');
     // console.log(">>>连接上http://localhost:15674");
 
     document.getElementById("text").onblur=function (){
