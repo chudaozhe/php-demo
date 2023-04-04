@@ -8,6 +8,16 @@
     "symfony/cache": "^5.3",
     "mongodb/mongodb": "^1.11",
     "google/protobuf": "^3.20",
-    "stomp-php/stomp-php": "^5.0"
+    "stomp-php/stomp-php": "^5.0",
+    "firebase/php-jwt": "^6.2",
+    "grpc/grpc": "~1.30.0",
+    "elasticsearch/elasticsearch": "^7.10"
+  },
+  "autoload": {
+    "psr-4": {
+      "demo\\": "demo/"
+    },
+    "files": [
+    ]
   }
 }
