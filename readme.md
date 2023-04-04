@@ -5,3 +5,5 @@
 - kafka
 - mongodb
 - rabbitmq
+- jwt
+- elasticsearch
