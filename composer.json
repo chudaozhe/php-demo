@@ -7,15 +7,18 @@
     "doctrine/cache": "^2.1",
     "symfony/cache": "^5.3",
     "mongodb/mongodb": "^1.11",
-    "google/protobuf": "^3.20",
     "stomp-php/stomp-php": "^5.0",
     "firebase/php-jwt": "^6.2",
-    "grpc/grpc": "~1.30.0",
-    "elasticsearch/elasticsearch": "^7.10"
+    "elasticsearch/elasticsearch": "^7.10",
+    "grpc/grpc": "^v1.57.0",
+    "google/protobuf": "^v3.25.1",
+    "ext-grpc": "*"
   },
   "autoload": {
     "psr-4": {
-      "demo\\": "demo/"
+      "demo\\": "demo/",
+      "GPBMetadata\\": ["grpc/GPBMetadata/"],
+      "Helloworld\\": "grpc/Helloworld/"
     },
     "files": [
     ]

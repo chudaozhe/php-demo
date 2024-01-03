@@ -7,3 +7,4 @@
 - rabbitmq
 - jwt
 - elasticsearch
+- grpc
